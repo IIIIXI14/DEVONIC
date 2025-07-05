@@ -23,15 +23,25 @@ const Hero = () => {
       <div className="absolute bottom-32 right-20 w-48 h-48 bg-secondary/20 rounded-full blur-xl animate-float" style={{ animationDelay: '1s' }} />
       
       <div className="container mx-auto px-6 text-center z-10">
-        {/* Logo */}
+        {/* Logo with enhanced glow effect */}
         <div 
           className="mb-8 cursor-pointer"
           onClick={handleGlitch}
         >
-          <h1 className={`text-8xl md:text-9xl font-orbitron font-black text-gradient ${isGlitching ? 'animate-glitch' : ''}`}>
+          <h1 
+            className={`text-8xl md:text-9xl font-orbitron font-black text-gradient ${isGlitching ? 'animate-glitch' : ''}`}
+            style={{
+              filter: 'drop-shadow(0 0 20px rgba(0, 255, 136, 0.6))',
+            }}
+          >
             DEVONIC
           </h1>
-          <div className="w-32 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4 animate-glow" />
+          <div 
+            className="w-32 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4 animate-glow" 
+            style={{
+              boxShadow: '0 0 20px rgba(0, 255, 136, 0.8)',
+            }}
+          />
         </div>
         
         {/* Tagline */}
