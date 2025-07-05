@@ -51,7 +51,9 @@ try {
     define: {
       'process.env.NODE_ENV': isDev ? '"development"' : '"production"'
     },
-    external: ['@rollup/rollup-linux-x64-gnu'] // Explicitly exclude problematic module
+    external: ['@rollup/rollup-linux-x64-gnu'],
+    jsx: 'automatic',
+    jsxImportSource: 'react'
   });
 
   console.log('✅ Build completed successfully!');
