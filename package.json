@@ -8,14 +8,12 @@
   },
   "scripts": {
     "preinstall": "node -v && echo 'Node version check'",
-    "postinstall": "npm install @rollup/rollup-linux-x64-gnu --no-save || echo 'Rollup native module install failed, continuing...'",
-    "dev": "vite",
-    "build": "vite build",
-    "build:esbuild": "esbuild src/main.tsx --bundle --outfile=dist/index.js --minify --sourcemap",
-    "build:dev": "vite build --mode development",
+    "dev": "node dev-server.js",
+    "build": "node build.js",
+    "build:dev": "node build.js --mode development",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "vercel-build": "pnpm install && pnpm run build"
+    "preview": "node preview-server.js",
+    "vercel-build": "node build.js"
   },
   "resolutions": {
     "rollup": "4.9.5",
@@ -79,7 +77,6 @@
     "@types/node": "^22.5.5",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
-    "@vitejs/plugin-react-swc": "^3.3.0",
     "autoprefixer": "^10.4.20",
     "esbuild": "^0.19.0",
     "eslint": "^9.9.0",
@@ -89,7 +86,6 @@
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.11",
     "typescript": "^5.5.3",
-    "typescript-eslint": "^8.0.1",
-    "vite": "^4.5.0"
+    "typescript-eslint": "^8.0.1"
   }
 }

@@ -1,20 +1,13 @@
 {
-  "buildCommand": "chmod +x build.sh && ./build.sh",
-  "installCommand": "npm install -g pnpm && pnpm install",
-  "framework": "vite",
+  "buildCommand": "npm install && node build.js",
+  "installCommand": "npm install",
+  "framework": null,
   "build": {
     "env": {
-      "NODE_VERSION": "20",
-      "NPM_CONFIG_PACKAGE_MANAGER": "pnpm"
-    }
-  },
-  "functions": {
-    "app/api/**/*.js": {
-      "runtime": "nodejs20.x"
+      "NODE_VERSION": "20"
     }
   },
   "env": {
-    "NODE_VERSION": "20",
-    "NPM_CONFIG_PACKAGE_MANAGER": "pnpm"
+    "NODE_VERSION": "20"
   }
 } 
