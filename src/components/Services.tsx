@@ -5,74 +5,78 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 const Services = () => {
   const services = [
     {
-      title: 'Launch Ready MVP',
-      price: '₹29,999+',
-      description: 'Full-stack web application ready for launch',
+      title: 'Basic Website',
+      price: '₹5,000+',
+      description: 'Professional website with essential pages',
       features: [
-        'Modern React/Next.js frontend',
-        'Scalable backend architecture',
-        'Database design & setup',
-        'Authentication & security',
+        '2-3 pages (Home, About, Contact)',
         'Responsive design',
-        '30-day support'
-      ],
-      timeline: '2-4 weeks',
-      popular: true
-    },
-    {
-      title: 'Digital Starter Website',
-      price: '₹9,999+',
-      description: 'Professional business website that converts',
-      features: [
-        'Custom responsive design',
         'SEO optimization',
         'Contact forms',
-        'Google Analytics',
-        'Social media integration',
-        'Mobile optimization'
+        'Mobile optimization',
+        'Basic customization'
       ],
       timeline: '1-2 weeks',
       popular: false
     },
     {
-      title: 'FitConnect App',
-      price: '₹24,999+',
-      description: 'Complete fitness ecosystem mobile app',
+      title: 'Advanced Website',
+      price: 'Custom Quote',
+      description: 'Feature-rich website tailored to your needs',
       features: [
-        'Flutter cross-platform app',
-        'Workout tracking',
-        'Social features',
-        'Progress analytics',
-        'Push notifications',
-        'Admin dashboard'
+        'eCommerce integration',
+        'Booking systems',
+        'User authentication',
+        'Database integration',
+        'Custom features',
+        'Advanced animations'
       ],
-      timeline: '3-5 weeks',
+      timeline: '2-4 weeks',
       popular: false
     },
     {
-      title: 'DEVONIC Boost',
-      price: '₹4,999/mo',
-      description: 'Ongoing development & maintenance support',
+      title: 'Basic App',
+      price: '₹14,999+',
+      description: 'Cross-platform mobile app with core features',
       features: [
-        'Monthly feature updates',
-        'Bug fixes & optimizations',
-        'Performance monitoring',
-        'Security updates',
-        'Technical support',
-        'Growth consulting'
+        'Flutter/React Native',
+        'User login system',
+        'Dashboard interface',
+        'Firebase/Supabase backend',
+        'Push notifications',
+        'Basic CRUD operations'
       ],
-      timeline: 'Ongoing',
+      timeline: '3-4 weeks',
+      popular: true
+    },
+    {
+      title: 'Advanced App',
+      price: 'Custom Quote',
+      description: 'Feature-rich mobile application',
+      features: [
+        'Multiple screens & features',
+        'Complex database design',
+        'API integrations',
+        'Real-time features',
+        'Advanced analytics',
+        'Custom backend logic'
+      ],
+      timeline: '4-8 weeks',
       popular: false
     }
   ];
 
   const techStack = [
+    { name: 'HTML', color: 'text-orange-400' },
+    { name: 'CSS', color: 'text-blue-400' },
+    { name: 'JavaScript', color: 'text-yellow-400' },
+    { name: 'Python', color: 'text-green-400' },
+    { name: 'React Native', color: 'text-cyan-400' },
+    { name: 'Bootstrap', color: 'text-purple-400' },
+    { name: 'PHP', color: 'text-indigo-400' },
     { name: 'Flutter', color: 'text-blue-400' },
-    { name: 'React', color: 'text-cyan-400' },
-    { name: 'Node.js', color: 'text-green-400' },
     { name: 'Firebase', color: 'text-orange-400' },
-    { name: 'Supabase', color: 'text-green-400' },
-    { name: 'MongoDB', color: 'text-green-500' }
+    { name: 'Supabase', color: 'text-green-400' }
   ];
 
   return (
@@ -82,8 +86,11 @@ const Services = () => {
           <h2 className="text-4xl md:text-6xl font-orbitron font-bold text-gradient mb-6">
             Services & Pricing
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-4">
             Choose the perfect package to bring your vision to life
+          </p>
+          <p className="text-lg text-primary font-semibold">
+            All projects are scalable, customizable, and tailored to client needs
           </p>
         </div>
         
@@ -131,7 +138,7 @@ const Services = () => {
                 <Button 
                   className="w-full bg-gradient-to-r from-primary to-secondary hover:from-primary/80 hover:to-secondary/80 text-black font-semibold"
                   onClick={() => {
-                    window.open('https://wa.me/919999999999?text=Hi+DEVONIC,+I+want+to+discuss+' + encodeURIComponent(service.title), '_blank');
+                    window.open('https://wa.me/917208737077?text=Hi+DEVONIC,+I+want+to+discuss+' + encodeURIComponent(service.title), '_blank');
                   }}
                 >
                   Get Started
@@ -150,7 +157,7 @@ const Services = () => {
             {techStack.map((tech, index) => (
               <div 
                 key={tech.name}
-                className={`px-4 py-2 bg-card border border-border rounded-lg ${tech.color} font-semibold hover:border-primary/50 transition-all duration-300 animate-fade-in`}
+                className={`px-4 py-2 bg-card border border-border rounded-lg ${tech.color} font-semibold hover:border-primary/50 hover:glow transition-all duration-300 animate-fade-in`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {tech.name}

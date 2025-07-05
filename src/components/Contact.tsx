@@ -28,7 +28,7 @@ const Contact = () => {
 
     // Create WhatsApp message
     const message = `Hi DEVONIC! 👋\n\nName: ${formData.name}\nEmail: ${formData.email}\n\nProject Idea:\n${formData.project}\n\nLet's discuss how we can bring this to life!`;
-    const whatsappUrl = `https://wa.me/919999999999?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/917208737077?text=${encodeURIComponent(message)}`;
     
     window.open(whatsappUrl, '_blank');
     
@@ -131,13 +131,16 @@ const Contact = () => {
                   Need to discuss your project right away?
                 </p>
                 <Button 
-                  className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold"
+                  className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold mb-3"
                   onClick={() => {
-                    window.open('https://wa.me/919999999999?text=Hi+DEVONIC,+I+want+to+discuss+my+project!', '_blank');
+                    window.open('https://wa.me/917208737077?text=Hi+DEVONIC,+I+want+to+discuss+my+project!', '_blank');
                   }}
                 >
-                  Message on WhatsApp
+                  WhatsApp: +91 7208737077
                 </Button>
+                <div className="text-sm text-muted-foreground">
+                  <p className="mb-2">Available 9 AM - 9 PM IST</p>
+                </div>
               </CardContent>
             </Card>
             
@@ -150,14 +153,28 @@ const Contact = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground mb-4">
-                  Prefer email? We're here for you.
+                  Prefer email? Choose any team member:
                 </p>
-                <a 
-                  href="mailto:hello@devonic.in"
-                  className="text-secondary hover:text-secondary/80 font-semibold transition-colors"
-                >
-                  hello@devonic.in
-                </a>
+                <div className="space-y-2">
+                  <a 
+                    href="mailto:bhagatharshal49@gmail.com"
+                    className="block text-secondary hover:text-secondary/80 font-semibold transition-colors"
+                  >
+                    bhagatharshal49@gmail.com
+                  </a>
+                  <a 
+                    href="mailto:harshthakur25may2004@gmail.com"
+                    className="block text-secondary hover:text-secondary/80 font-semibold transition-colors"
+                  >
+                    harshthakur25may2004@gmail.com
+                  </a>
+                  <a 
+                    href="mailto:swayamthakur369@gmail.com"
+                    className="block text-secondary hover:text-secondary/80 font-semibold transition-colors"
+                  >
+                    swayamthakur369@gmail.com
+                  </a>
+                </div>
               </CardContent>
             </Card>
             

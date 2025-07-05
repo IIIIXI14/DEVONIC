@@ -65,12 +65,13 @@ const Footer = () => {
           {/* Contact & Social */}
           <div>
             <h4 className="text-lg font-semibold text-foreground mb-4">Connect</h4>
-            <div className="mb-4">
+            <div className="mb-4 space-y-1">
+              <p className="text-sm text-muted-foreground">Phone: +91 7208737077</p>
               <a 
-                href="mailto:hello@devonic.in"
-                className="text-muted-foreground hover:text-primary transition-colors"
+                href="mailto:bhagatharshal49@gmail.com"
+                className="block text-muted-foreground hover:text-primary transition-colors text-sm"
               >
-                hello@devonic.in
+                bhagatharshal49@gmail.com
               </a>
             </div>
             <div className="flex space-x-4">
