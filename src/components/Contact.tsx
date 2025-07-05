@@ -5,40 +5,64 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    project: ''
+    phone: '',
+    project_idea: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!formData.name || !formData.email || !formData.project) {
+    if (!formData.name || !formData.email || !formData.project_idea) {
       toast({
-        title: "Please fill all fields",
-        description: "All fields are required to submit your project inquiry.",
+        title: "Please fill required fields",
+        description: "Name, email, and project idea are required.",
         variant: "destructive"
       });
       return;
     }
 
-    // Create WhatsApp message
-    const message = `Hi DEVONIC! 👋\n\nName: ${formData.name}\nEmail: ${formData.email}\n\nProject Idea:\n${formData.project}\n\nLet's discuss how we can bring this to life!`;
-    const whatsappUrl = `https://wa.me/917208737077?text=${encodeURIComponent(message)}`;
-    
-    window.open(whatsappUrl, '_blank');
-    
-    toast({
-      title: "Redirecting to WhatsApp",
-      description: "We'll get back to you within 24 hours!",
-    });
-    
-    // Reset form
-    setFormData({ name: '', email: '', project: '' });
+    setIsSubmitting(true);
+
+    try {
+      const { error } = await supabase
+        .from('contact_submissions')
+        .insert([formData]);
+
+      if (error) {
+        throw error;
+      }
+
+      // Also create WhatsApp message
+      const message = `Hi DEVONIC! 👋\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone || 'Not provided'}\n\nProject Idea:\n${formData.project_idea}\n\nLet's discuss how we can bring this to life!`;
+      const whatsappUrl = `https://wa.me/917208737077?text=${encodeURIComponent(message)}`;
+      
+      window.open(whatsappUrl, '_blank');
+      
+      toast({
+        title: "Message sent successfully!",
+        description: "We've received your project details and will get back to you within 24 hours!",
+      });
+      
+      // Reset form
+      setFormData({ name: '', email: '', phone: '', project_idea: '' });
+    } catch (error) {
+      console.error('Error submitting contact form:', error);
+      toast({
+        title: "Error sending message",
+        description: "Please try again or contact us directly via WhatsApp.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -76,7 +100,7 @@ const Contact = () => {
                 <div>
                   <Input
                     name="name"
-                    placeholder="Your Name"
+                    placeholder="Your Name *"
                     value={formData.name}
                     onChange={handleInputChange}
                     className="bg-muted border-border focus:border-primary"
@@ -88,19 +112,30 @@ const Contact = () => {
                   <Input
                     name="email"
                     type="email"
-                    placeholder="your.email@example.com"
+                    placeholder="your.email@example.com *"
                     value={formData.email}
                     onChange={handleInputChange}
                     className="bg-muted border-border focus:border-primary"
                     required
                   />
                 </div>
+
+                <div>
+                  <Input
+                    name="phone"
+                    type="tel"
+                    placeholder="Your Phone Number (Optional)"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    className="bg-muted border-border focus:border-primary"
+                  />
+                </div>
                 
                 <div>
                   <Textarea
-                    name="project"
-                    placeholder="Describe your project idea, goals, and timeline..."
-                    value={formData.project}
+                    name="project_idea"
+                    placeholder="Describe your project idea, goals, and timeline... *"
+                    value={formData.project_idea}
                     onChange={handleInputChange}
                     className="bg-muted border-border focus:border-primary min-h-[120px]"
                     required
@@ -109,9 +144,10 @@ const Contact = () => {
                 
                 <Button 
                   type="submit"
+                  disabled={isSubmitting}
                   className="w-full bg-gradient-to-r from-primary to-secondary hover:from-primary/80 hover:to-secondary/80 text-black font-semibold py-3"
                 >
-                  Send Project Details
+                  {isSubmitting ? 'Sending...' : 'Send Project Details'}
                 </Button>
               </form>
             </CardContent>

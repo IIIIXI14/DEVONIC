@@ -11,7 +11,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
       {/* Animated Background Grid */}
       <div 
         className="absolute inset-0 bg-grid-pattern opacity-20"
@@ -23,19 +23,37 @@ const Hero = () => {
       <div className="absolute bottom-32 right-20 w-48 h-48 bg-secondary/20 rounded-full blur-xl animate-float" style={{ animationDelay: '1s' }} />
       
       <div className="container mx-auto px-6 text-center z-10">
-        {/* Logo with enhanced glow effect */}
+        {/* Animated Logo */}
         <div 
           className="mb-8 cursor-pointer"
           onClick={handleGlitch}
         >
-          <h1 
-            className={`text-8xl md:text-9xl font-orbitron font-black text-gradient ${isGlitching ? 'animate-glitch' : ''}`}
-            style={{
-              filter: 'drop-shadow(0 0 20px rgba(0, 255, 136, 0.6))',
-            }}
-          >
-            DEVONIC
-          </h1>
+          <div className={`relative inline-block ${isGlitching ? 'animate-glitch' : ''}`}>
+            {/* Main Logo */}
+            <div className="w-32 h-32 mx-auto mb-6 relative animate-pulse-glow">
+              <div className="w-full h-full bg-gradient-to-br from-primary via-secondary to-primary rounded-2xl flex items-center justify-center relative overflow-hidden">
+                <span className="text-6xl font-orbitron font-black text-black z-10">D</span>
+                
+                {/* Animated background elements */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/80 to-secondary/80 animate-spin-slow rounded-2xl opacity-50" />
+                <div className="absolute inset-2 bg-gradient-to-tl from-secondary/60 to-primary/60 rounded-xl animate-pulse" />
+              </div>
+              
+              {/* Glow effects */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary to-secondary rounded-2xl blur-xl opacity-60 animate-glow" />
+            </div>
+            
+            {/* Company name */}
+            <h1 
+              className="text-6xl md:text-8xl font-orbitron font-black text-gradient mb-4"
+              style={{
+                filter: 'drop-shadow(0 0 20px rgba(0, 255, 136, 0.6))',
+              }}
+            >
+              DEVONIC
+            </h1>
+          </div>
+          
           <div 
             className="w-32 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4 animate-glow" 
             style={{
