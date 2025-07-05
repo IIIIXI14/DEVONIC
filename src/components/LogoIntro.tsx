@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 
 interface LogoIntroProps {
@@ -74,6 +73,20 @@ const LogoIntro = ({ onComplete }: LogoIntroProps) => {
               : ''
           }`}
         >
+          <div className="relative w-32 h-32 mx-auto mb-6">
+            {/* Centered logo over animated background */}
+            <img 
+              src="/logo.png" 
+              alt="DEVONIC Logo" 
+              className="absolute inset-0 m-auto w-20 h-20 object-contain pointer-events-none z-20"
+              style={{ left: 0, right: 0, top: 0, bottom: 0 }}
+            />
+            {/* Animated background elements */}
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/80 to-secondary/80 animate-spin-slow rounded-2xl opacity-50" />
+            <div className="absolute inset-2 bg-gradient-to-tl from-secondary/60 to-primary/60 rounded-xl animate-pulse" />
+            {/* Glow effects */}
+            <div className="absolute inset-0 bg-gradient-to-br from-primary to-secondary rounded-2xl blur-xl opacity-60 animate-glow" />
+          </div>
           <h1 
             className={`text-8xl md:text-9xl font-orbitron font-black text-gradient transition-all duration-500 ${
               phase >= 5 ? 'drop-shadow-[0_0_30px_rgba(0,255,136,0.8)]' : ''

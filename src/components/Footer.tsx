@@ -1,4 +1,3 @@
-
 const Footer = () => {
   const socialLinks = [
     { name: 'Instagram', url: 'https://instagram.com/devonic.in', icon: '📷' },
@@ -12,9 +11,18 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Brand */}
           <div>
-            <h3 className="text-3xl font-orbitron font-bold text-gradient mb-4">
-              DEVONIC
-            </h3>
+            <div className="flex items-center space-x-3 mb-4">
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center overflow-hidden">
+                <img 
+                  src="/logo.png" 
+                  alt="DEVONIC Logo" 
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <h3 className="text-3xl font-orbitron font-bold text-gradient">
+                DEVONIC
+              </h3>
+            </div>
             <p className="text-muted-foreground mb-4">
               Invent. Develop. Dominate.
             </p>

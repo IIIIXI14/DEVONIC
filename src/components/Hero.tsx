@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 
@@ -31,14 +30,16 @@ const Hero = () => {
           <div className={`relative inline-block ${isGlitching ? 'animate-glitch' : ''}`}>
             {/* Main Logo */}
             <div className="w-32 h-32 mx-auto mb-6 relative animate-pulse-glow">
-              <div className="w-full h-full bg-gradient-to-br from-primary via-secondary to-primary rounded-2xl flex items-center justify-center relative overflow-hidden">
-                <span className="text-6xl font-orbitron font-black text-black z-10">D</span>
-                
-                {/* Animated background elements */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/80 to-secondary/80 animate-spin-slow rounded-2xl opacity-50" />
-                <div className="absolute inset-2 bg-gradient-to-tl from-secondary/60 to-primary/60 rounded-xl animate-pulse" />
-              </div>
-              
+              {/* Centered logo over animated background */}
+              <img 
+                src="/centerlogo.png" 
+                alt="DEVONIC Logo" 
+                className="absolute inset-0 m-auto w-32 h-32 object-contain pointer-events-none z-20"
+                style={{ left: 0, right: 0, top: 0, bottom: 0 }}
+              />
+              {/* Animated background elements */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/80 to-secondary/80 animate-spin-slow rounded-2xl opacity-50" />
+              <div className="absolute inset-2 bg-gradient-to-tl from-secondary/60 to-primary/60 rounded-xl animate-pulse" />
               {/* Glow effects */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary to-secondary rounded-2xl blur-xl opacity-60 animate-glow" />
             </div>

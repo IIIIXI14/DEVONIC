@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 
@@ -28,8 +27,12 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
-              <span className="text-black font-orbitron font-black text-xl">D</span>
+            <div className="w-10 h-10 rounded-lg flex items-center justify-center overflow-hidden">
+              <img 
+                src="/logo.png" 
+                alt="DEVONIC Logo" 
+                className="w-full h-full object-contain"
+              />
             </div>
             <span className="text-2xl font-orbitron font-bold text-gradient">DEVONIC</span>
           </div>

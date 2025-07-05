@@ -1,73 +1,113 @@
-# Welcome to your Lovable project
+# DEVONIC
 
-## Project info
+![DEVONIC Logo](public/logo.png)
 
-**URL**: https://lovable.dev/projects/83089b5d-8bc0-49e7-a3cf-1af9d5d6f3d8
+**Invent. Develop. Dominate.**
 
-## How can I edit this code?
+DEVONIC builds lightning-fast websites, powerful mobile apps, and cutting-edge IoT solutions that dominate the digital landscape. We are a professional software development company based in India, helping startups and enterprises turn ambitious ideas into reality.
 
-There are several ways of editing your application.
+---
 
-**Use Lovable**
+## 📸 Screenshots
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/83089b5d-8bc0-49e7-a3cf-1af9d5d6f3d8) and start prompting.
+Main landing page:
 
-Changes made via Lovable will be committed automatically to this repo.
+![DEVONIC Screenshot](public/screenshot.png)
 
-**Use your preferred IDE**
+> _Add more screenshots by placing images in the `public/` folder and referencing them here._
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+---
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 🚀 Features
 
-Follow these steps:
+- ⚡ **Blazing Fast**: Built with Vite, React, and TypeScript for instant feedback and rapid development.
+- 🎨 **Modern UI**: Styled with Tailwind CSS and shadcn/ui for a beautiful, responsive interface.
+- 🧩 **Modular Components**: Reusable, accessible, and easy-to-customize UI components.
+- 🔗 **Supabase Integration**: Scalable backend, authentication, and database out of the box.
+- 🌐 **SEO & Social Ready**: Optimized meta tags, Open Graph, and Twitter cards.
+- 📱 **Mobile-First**: Fully responsive and touch-friendly.
+- 🛠️ **Developer Friendly**: ESLint, Prettier, and modern tooling for a smooth workflow.
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+---
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## 🛠️ Tech Stack
 
-# Step 3: Install the necessary dependencies.
-npm i
+- [React](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vitejs.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [shadcn/ui](https://ui.shadcn.com/)
+- [Supabase](https://supabase.com/)
+- [Radix UI](https://www.radix-ui.com/)
+- [ESLint](https://eslint.org/)
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+---
+
+## 📦 Getting Started
+
+### 1. **Clone the Repository**
+
+```bash
+git clone https://github.com/your-username/devonic.git
+cd devonic
+```
+
+### 2. **Install Dependencies**
+
+```bash
+npm install
+```
+
+### 3. **Start the Development Server**
+
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Visit [http://localhost:8080](http://localhost:8080) to see DEVONIC in action!
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+---
 
-**Use GitHub Codespaces**
+## 📝 Project Structure
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```
+src/
+  components/      # UI and layout components
+  hooks/           # Custom React hooks
+  integrations/    # Supabase and other integrations
+  lib/             # Utilities and helpers
+  pages/           # Page-level components
+  App.tsx          # Main app component
+  main.tsx         # Entry point
+public/
+  logo.png         # Your brand logo
+  screenshot.png   # Main UI screenshot
+  favicon.ico      # Favicon
+```
 
-## What technologies are used for this project?
+---
 
-This project is built with:
+## 🌟 Customization
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- **Branding:** Replace `public/logo.png` with your own logo.
+- **Colors & Fonts:** Edit `tailwind.config.ts` and `src/index.css` for your brand palette and typography.
+- **Meta Tags:** Update `index.html` for SEO and social sharing.
 
-## How can I deploy this project?
+---
 
-Simply open [Lovable](https://lovable.dev/projects/83089b5d-8bc0-49e7-a3cf-1af9d5d6f3d8) and click on Share -> Publish.
+## 📄 License
 
-## Can I connect a custom domain to my Lovable project?
+This project is licensed under the [MIT License](LICENSE).
 
-Yes, you can!
+---
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 🤝 Connect
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+- [Instagram](https://instagram.com/devonic.in)
+- [LinkedIn](https://linkedin.com/company/devonic)
+- [GitHub](https://github.com/devonic)
+- Email: bhagatharshal49@gmail.com
+
+---
+
+> © 2024 DEVONIC. All rights reserved. Built with ⚡ and 💚
